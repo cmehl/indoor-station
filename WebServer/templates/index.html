@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Home sensing</title>
+        <link rel="stylesheet" href='../static/style.css'/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style>
+			body {
+				text-align: center;
+			}
+			#g1,
+			#g2,
+			#g3,
+			#g4 {
+				width: 240px;
+				height: 192px;
+				display: inline-block;
+				margin: 1em;
+			}
+		</style>
+    </head>
+    
+<body>
+    
+    <ul>
+	  <li><a class="active" href="/index">Instantaneous</a></li>
+	  <li><a href="/historic_short_term">Short term historic</a></li>
+	  <li><a href="/historic_long_term">Long term historic</a></li>
+	</ul>
+
+
+    <div id="g1"></div>
+    <div id="g2"></div>
+    <p> </p>
+    <div id="g3"></div>
+    <div id="g4"></div>
+    <p> <a href="/"class="button"><span>Refresh</span></a> </p>
+	<p> <em> Last Sensors Reading: {{ time }} </em> </p>	
+	
+
+</body>
+
+<footer>
+    
+    <script src="../static/raphael-2.1.4.min.js"></script>
+    <script src="../static/justgage.js"></script>
+    <script>
+		var g1, g2, g3, g4;
+		document.addEventListener("DOMContentLoaded", function(event) {
+			g1 = new JustGage({
+				id: "g1",
+				value: {{temp}},
+				valueFontColor: "black",
+				titleFontColor: "black",
+				min: 0,
+				max: 40,
+				title: "Temperature",
+				label: "Celcius"
+			});
+			g2 = new JustGage({
+				id: "g2",
+				value: {{hum}},
+				valueFontColor: "black",
+				titleFontColor: "black",
+				min: 0,
+				max: 100,
+				title: "Humidity",
+				label: "%"
+			});
+			g3 = new JustGage({
+				id: "g3",
+				value: {{pm25}},
+				valueFontColor: "black",
+				titleFontColor: "black",
+				min: 0,
+				max: 100,
+				title: "PM2.5",
+				label: "μg/m3"
+			});
+			g4 = new JustGage({
+				id: "g4",
+				value: {{pm10}},
+				valueFontColor: "black",
+				titleFontColor: "black",
+				min: 0,
+				max: 150,
+				title: "PM10",
+				label: "μg/m3"
+			});
+		});
+    </script>
+</footer>
+
+</html>

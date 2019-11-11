@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Home sensing</title>
+        <link rel="stylesheet" href='../static/style.css'/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style>
+			body {
+				text-align: center;
+			}
+		</style>
+    </head>
+    
+    <body>
+    
+	<ul>
+	  <li><a href="/index">Instantaneous</a></li>
+	  <li><a href="/historic_short_term">Short term historic</a></li>
+	  <li><a class="active" href="/historic_long_term">Long term historic</a></li>
+	</ul>
+
+	<!-- D3.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- Plotly.js -->
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	
+	<!-- Graph insertion -->
+	{{ plotly_graph_TH  | safe }}
+	{{ plotly_graph_PM  | safe }}
+
+    
+    </body>
+</html>

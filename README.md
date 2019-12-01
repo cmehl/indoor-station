@@ -16,4 +16,18 @@ Data acquisition is made with a small setup based on a [Raspberry Pi](https://ww
 
 The collected data is exposed in a nice way using a small web application based on Python and its Flask library. The server is hosted by the Raspberry Pi and made accessible only from local network at home. 
 
+Three pages have been created:
+
+* The first page shows the last data measures for temperature, humidity, PM10 and PM2.5.
+* The second page shows the evolution of these quantities over the past 3 days.
+* The third and last page represents the evolution of daily averaged data over past months. The standard deviation is also shown for each dataset.
+
+![Web application: instantaneous data](figures/inst.png)
+
+
+![Web application: instantaneous data evolution over past 3 days](figures/day.png)
+
+![Web application: averaged data evolution over past months](figures/month.png)
+
+
 **README IS IN WORK-IN-PROGRESS**
